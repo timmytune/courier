@@ -32,7 +32,7 @@ Route.post('login', 'UserController.login')
 
      /* 
     Register and get token
-    Request: email, password, 
+    Request: email, password, phone, username 
     Respose: Authenticated user with token 
     */
 Route.post('register', 'UserController.register')

@@ -1,18 +1,27 @@
 # A simple courier servicce built on AdonisJS
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+This is a simple courier service API that uses google's geolocation in the backend.  
 
 ## Setup
 
-Use the adonis command to install the blueprint
+- Run `npm install` to install all dependencies
+- Make a copy of `.env.example` rename it to `.env`
+- Run `adonis key:generate` to generate the secret key
+- Update the database information and also add you googlemaps api key  in the .env file
+- Run `adonis migration:run` to setup the database
+- Run `adonis serve --dev` to run the application
 
-or manually clone the repo and then run `npm install`.
 
+## Major endpoints
 
-### Migrations
+`http://127.0.0.1:3333/api/v1/register`
 
-Run the following command to run startup migrations.
+Request fields.
 
 ```js
-adonis migration:run
+ email, password, phone, username 
 ```
+
+Response.
+
+`Authenticated user with token `
