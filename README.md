@@ -15,7 +15,7 @@ This is a simple courier service API that uses google's geolocation in the backe
 ## Major endpoints
 
 ```js
-    http://127.0.0.1:3333/api/v1/register`
+    http://127.0.0.1:3333/api/v1/register
 ```
 
 Create a new account
@@ -28,8 +28,11 @@ Create a new account
 
 `Authenticated user with token `
 
+
+
+
 ```js
-    http://127.0.0.1:3333/api/v1/login`
+    http://127.0.0.1:3333/api/v1/login
 ```
 
 Login and get token from application
@@ -41,4 +44,94 @@ Login and get token from application
 ### Response.
 
 ` Token `
+
+
+
+```js
+    http://127.0.0.1:3333/api/v1/getcost
+```
+
+Provide two addresses and return the distances between them and the cost of transporting products
+
+(Please take note this endpoint needs authorization, you have to provide `Autorization: Bearer <token> ` header )
+
+### Request fields.
+
+`SenderAddress, deliveryAddress, weight`
+
+### Response.
+
+`return co-orditates of addresses, and the cost of moving products between them`
+
+
+
+
+```js
+    http://127.0.0.1:3333/api/v1/createjob
+```
+
+Provide information for creating a delivery job
+
+(Please take note this endpoint needs authorization, you have to provide `Autorization: Bearer <token>` header )
+
+### Request fields.
+
+SenderAddress, deliveryAddress, weight, senderPhone, deliveryPhone, name, description, otherInformation
+
+### Response.
+
+`return co-orditates of addresses, and the cost of moving products between them`
+
+
+
+
+
+
+```js
+    http://127.0.0.1:3333/api/v1/updatejobstatus/:id
+```
+
+Update the status of a delivery job, this is used to determine what phase this job is in
+
+(Please take note this endpoint needs authorization, you have to provide `Autorization: Bearer <token>` header )
+
+### Request fields.
+
+status
+
+### Response.
+
+`return ok message`
+
+
+
+
+```js
+    http://127.0.0.1:3333/api/v1/finishjob/:id
+```
+
+After a job has been completed you call this to finish it
+
+(Please take note this endpoint needs authorization, you have to provide `Autorization: Bearer <token>` header )
+
+### Request fields.
+
+date (date this job was finished)
+
+### Response.
+
+`return ok message`
+
+```js
+   there is also a live demo of this project please visit  http://adonisjs.ideraos.com
+```
+
+
+
+
+
+
+
+
+
 

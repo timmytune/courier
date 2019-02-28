@@ -59,7 +59,7 @@ Route.post('createjob', 'GeoLocationController.createJob')
 
      /* 
     Update the status of a delivery job, this is used to determine what phase this job is in, 
-    Request: status (canceled: 0, pending: 1,  )
+    Request: status (canceled: 0, pending: 1, approved: 2, pickedup: 3, delivered: 4    )
     Respose: success message 
     */
 Route.post('updatejobstatus/:id', 'GeoLocationController.updateJobStatus')
